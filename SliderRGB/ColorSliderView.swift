@@ -13,7 +13,6 @@ struct ColorSliderView: View {
     @State private var alertPresented = false
     
     let color: Color
-    var action: (String) -> Void
     
     var body: some View {
         HStack(spacing: 20) {
@@ -30,29 +29,31 @@ struct ColorSliderView: View {
                 .frame(width: 60, alignment: .trailing)
                 .onChange(of: displayValue) { newValue in
                     checkValue()
-                    action(newValue)
+                    displayValue = newValue
                 }
                 .alert("Wrong format", isPresented: $alertPresented) {
                     Text("Enter number from 0...255")
                 }
-
+        }
+        .onAppear {
+            displayValue = "\(lround(value))"
         }
         
     }
     
     private func checkValue() {
         guard let doubleValue = Double(displayValue), doubleValue <= 255 else {
-            displayValue = ""
             alertPresented.toggle()
+            displayValue = ""
+            value = 0
             return
         }
         value = doubleValue
-        displayValue = ""
     }
 }
 
 struct ColorSlider_Preview: PreviewProvider {
     static var previews: some View {
-        ColorSliderView(value: .constant(0.0), displayValue: .constant(""), color: .red, action: {_ in })
+        ColorSliderView(value: .constant(0.0), displayValue: .constant(""), color: .red)
     }
 }
