@@ -20,7 +20,9 @@ struct ColorSliderView: View {
             Text("\(lround(value))")
                 .foregroundColor(color)
                 .frame(width: 40)
-            Slider(value: $value, in: 0...255, step: 1)
+            Slider(value: $value, in: 0...255, step: 1, onEditingChanged: { (_) in
+                displayValue = String(lround(value))
+            })
                 .tint(color)
             TextField("", text: $displayValue)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
