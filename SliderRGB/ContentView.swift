@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var greenDisplayValue = ""
     @State private var blueDisplayValue = ""
     
-    @FocusState var isInputActive: Bool
+    @FocusState private var isInputActive: Bool
     
     var body: some View {
         NavigationView {
@@ -32,17 +32,6 @@ struct ContentView: View {
                                   green: greenValue / 255,
                                   blue: blueValue / 255)
                         )
-                        .navigationTitle("Color Pallete")
-                        .toolbar {
-                            ToolbarItemGroup(placement: .keyboard) {
-                                Spacer()
-                                Button("Done") {
-                                    isInputActive = false
-                                    
-                                    
-                                }
-                            }
-                        }
                     ColorSliderView(
                         value: $redValue, textFieldValue: $redDisplayValue, color: .red)
                     
@@ -53,6 +42,16 @@ struct ContentView: View {
                         value: $blueValue, textFieldValue: $blueDisplayValue, color: .blue)
                 }
                 .padding(30)
+            }
+        }
+        .navigationTitle("Color Pallete")
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") {
+                    isInputActive = false
+                    
+                }
             }
         }
     }

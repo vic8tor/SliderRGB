@@ -25,6 +25,7 @@ struct TextFieldView: View {
                 Text("Enter number from 0...255")
             }
     }
+    
     private func checkValue() {
         guard let doubleValue = Double(textFieldValue), doubleValue <= 255 else {
             alertPresented.toggle()
