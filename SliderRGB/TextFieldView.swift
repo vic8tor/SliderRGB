@@ -14,9 +14,9 @@ struct TextFieldView: View {
     
     var body: some View {
         TextField("", text: $textFieldValue)
+            .frame(width: 60, alignment: .trailing)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .keyboardType(.decimalPad)
-            .frame(width: 60, alignment: .trailing)
             .onChange(of: textFieldValue) { newValue in
                 textFieldValue = newValue
                 checkValue()
