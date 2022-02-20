@@ -17,7 +17,6 @@ struct ContentView: View {
     @State private var greenDisplayValue = ""
     @State private var blueDisplayValue = ""
     
-    
     var body: some View {
         ZStack {
             Color.white.opacity(0.2).ignoresSafeArea()
@@ -26,9 +25,9 @@ struct ContentView: View {
                     .frame(width: 350, height: 150)
                     .padding()
                     .foregroundColor(
-                        Color(red: redValue,
-                              green: greenValue,
-                              blue: blueValue)
+                        Color(red: redValue / 255,
+                              green: greenValue / 255,
+                              blue: blueValue / 255)
                     )
                 ColorSliderView(
                     value: $redValue, textFieldValue: $redDisplayValue, color: .red)
