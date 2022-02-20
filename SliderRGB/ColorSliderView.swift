@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ColorSliderView: View {
     @Binding var value: Double
-    @Binding var displayValue: String
-    @State private var alertPresented = false
+    @Binding var textFieldValue: String
     
     let color: Color
     
@@ -20,40 +19,20 @@ struct ColorSliderView: View {
                 .foregroundColor(color)
                 .frame(width: 40)
             Slider(value: $value, in: 0...255, step: 1, onEditingChanged: { (_) in
-                displayValue = String(lround(value))
+                textFieldValue = String(lround(value))
             })
                 .tint(color)
-            TextField("", text: $displayValue)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.decimalPad)
-                .frame(width: 60, alignment: .trailing)
-                .onChange(of: displayValue) { newValue in
-                    checkValue()
-                    displayValue = newValue
-                }
-                .alert("Wrong format", isPresented: $alertPresented) {
-                    Text("Enter number from 0...255")
-                }
+            
+            TextFieldView(value: $value, textFieldValue: $textFieldValue)
         }
         .onAppear {
-            displayValue = "\(lround(value))"
+            textFieldValue = "\(lround(value))"
         }
-        
-    }
-    
-    private func checkValue() {
-        guard let doubleValue = Double(displayValue), doubleValue <= 255 else {
-            alertPresented.toggle()
-            displayValue = ""
-            value = 0
-            return
-        }
-        value = doubleValue
     }
 }
 
 struct ColorSlider_Preview: PreviewProvider {
     static var previews: some View {
-        ColorSliderView(value: .constant(0.0), displayValue: .constant(""), color: .red)
+        ColorSliderView(value: .constant(0.0), textFieldValue: .constant(""), color: .red)
     }
 }

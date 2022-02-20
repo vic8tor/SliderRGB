@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574D11CF27C224DE008E4DE5 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574D11CE27C224DE008E4DE5 /* TextFieldView.swift */; };
 		57AAB8BB27C0F3CC00216EB2 /* SliderRGBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAB8BA27C0F3CC00216EB2 /* SliderRGBApp.swift */; };
 		57AAB8BD27C0F3CC00216EB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAB8BC27C0F3CC00216EB2 /* ContentView.swift */; };
 		57AAB8BF27C0F3CE00216EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57AAB8BE27C0F3CE00216EB2 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		574D11CE27C224DE008E4DE5 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		57AAB8B727C0F3CC00216EB2 /* SliderRGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SliderRGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AAB8BA27C0F3CC00216EB2 /* SliderRGBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderRGBApp.swift; sourceTree = "<group>"; };
 		57AAB8BC27C0F3CC00216EB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				57AAB8BA27C0F3CC00216EB2 /* SliderRGBApp.swift */,
 				57AAB8BC27C0F3CC00216EB2 /* ContentView.swift */,
+				574D11CE27C224DE008E4DE5 /* TextFieldView.swift */,
 				57AAB8CA27C0F93900216EB2 /* ColorSliderView.swift */,
 				57AAB8BE27C0F3CE00216EB2 /* Assets.xcassets */,
 				57AAB8C027C0F3CE00216EB2 /* Preview Content */,
@@ -142,6 +145,7 @@
 			files = (
 				57AAB8BD27C0F3CC00216EB2 /* ContentView.swift in Sources */,
 				57AAB8CB27C0F93900216EB2 /* ColorSliderView.swift in Sources */,
+				574D11CF27C224DE008E4DE5 /* TextFieldView.swift in Sources */,
 				57AAB8BB27C0F3CC00216EB2 /* SliderRGBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,15 +30,14 @@ struct ContentView: View {
                               green: greenValue,
                               blue: blueValue)
                     )
+                ColorSliderView(
+                    value: $redValue, textFieldValue: $redDisplayValue, color: .red)
                 
                 ColorSliderView(
-                    value: $redValue, displayValue: $redDisplayValue, color: .red)
+                    value: $greenValue, textFieldValue: $greenDisplayValue, color: .green)
                 
                 ColorSliderView(
-                    value: $greenValue, displayValue: $greenDisplayValue, color: .green)
-                
-                ColorSliderView(
-                    value: $blueValue, displayValue: $blueDisplayValue, color: .blue)
+                    value: $blueValue, textFieldValue: $blueDisplayValue, color: .blue)
             }
             .padding(30)
         }
